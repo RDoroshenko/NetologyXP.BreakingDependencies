@@ -66,7 +66,16 @@ var itemTypes =
             "California" : "",
             "Colorado" : "",
             "Connecticut" : ""
-        }
+        },
+        "PreparedFood": {
+            "Alabama": 0,
+            "Alaska": 0,
+            "Arizona": 0,
+            "Arkansas": 0,
+            "California": 0,
+            "Colorado": 0,
+            "Connecticut": 0
+        },
     };
 
 function base(state) {
@@ -87,13 +96,7 @@ function calc(state, itemType) {
 }
 
 function calculatePriceFor(state, item){
-    var result = null;
-    if (items[item].type === "PreparedFood") {
-        result = ( 1 + base(state) ) * items[item].price;
-    }
-    else {
-        result = calc(state, items[item].type) * items[item].price + items[item].price;
-    }
+    var result = calc(state, items[item].type) * items[item].price + items[item].price;
     return result;
 };
 
