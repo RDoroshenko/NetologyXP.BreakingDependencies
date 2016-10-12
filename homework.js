@@ -89,6 +89,18 @@ var states = {
         "Groceries" : "",
         "PrescriptionDrug" : "",
         "PreparedFood" : 0
+    },
+    "Tennessee" : {
+        "Base" : 0.07,
+        "Groceries" : 0.05,
+        "PrescriptionDrug" : 0,
+        "PreparedFood" : 0
+    },
+    "Texas" : {
+        "Base" : 0.0625,
+        "Groceries" : "",
+        "PrescriptionDrug" : "",
+        "PreparedFood" : 0
     }
 };
 
@@ -129,7 +141,7 @@ var tests = [
 ];
 
 //Раскомментируйте следующую строчку для запуска тестов:
-runTests (tests);
+//runTests (tests);
 
 //############################
 //Код ниже этой строчки не надо менять для выполнения домашней работы
