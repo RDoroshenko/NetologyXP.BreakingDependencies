@@ -91,19 +91,19 @@ function base(state) {
     return taxes[state];
 }
 
-function calc(state, itemType) {
+function calculateTax(state, itemType) {
     return (itemTypes[itemType][state] === "") ? 0 : base(state) + itemTypes[itemType][state];
 }
 
 function calculatePriceFor(state, item){
-    var result = calc(state, items[item].type) * items[item].price + items[item].price;
+    var result = calculateTax(state, items[item].type) * items[item].price + items[item].price;
     return result;
 };
 
 class TaxCalculator {
     // У этой функции нелья менять интерфейс
     // Но можно менять содержимое
-    calculateTax() {
+    calculateReceipt() {
         var ordersCount = getOrdersCount();
         var state = getSelectedState();
         console.log(`----------${state}-----------`);
@@ -139,7 +139,7 @@ runTests (tests);
 
 function production(){
     var calculator = new TaxCalculator();
-    calculator.calculateTax();
+    calculator.calculateReceipt();
 }
 
 function getSelectedItem(){
