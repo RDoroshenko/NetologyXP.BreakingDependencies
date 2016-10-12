@@ -91,12 +91,8 @@ function base(state) {
     return taxes[state];
 }
 
-function calculateTax(state, itemType) {
-    return (itemTypes[itemType][state] === "") ? 0 : base(state) + itemTypes[itemType][state];
-}
-
 function calculatePriceFor(state, item){
-    var result = calculateTax(state, items[item].type) * items[item].price + items[item].price;
+    var result = ((itemTypes[items[item].type][state] === "") ? 0 : base(state) + itemTypes[items[item].type][state]) * items[item].price + items[item].price;
     return result;
 };
 
