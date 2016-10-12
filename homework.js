@@ -124,7 +124,7 @@ var states = {
 };
 
     function calculatePriceFor(state, item){
-    var result = ((states[state][items[item].type] === "") ? 0 : states[state].Base + itemTypes[items[item].type][state]) * items[item].price + items[item].price;
+    var result = ((states[state][items[item].type] === "") ? 0 : states[state].Base + states[state][items[item].type]) * items[item].price + items[item].price;
     return result;
 };
 
