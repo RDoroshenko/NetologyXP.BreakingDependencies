@@ -81,50 +81,50 @@ var itemTypes =
 var states = {
     "Alabama" : {
         "Base" : 0.04,
-        "Groceries" : "",
-        "PrescriptionDrug" : 0,
+        "Groceries" : 0,
+        "PrescriptionDrug" : "",
         "PreparedFood" : 0
     },
     "Alaska" : {
         "Base" : 0,
-        "Groceries" : "",
+        "Groceries" : 0,
         "PrescriptionDrug" : 0,
         "PreparedFood" : 0
     },
     "Arizona" : {
         "Base" : 0.056,
         "Groceries" : "",
-        "PrescriptionDrug" : 0,
+        "PrescriptionDrug" : "",
         "PreparedFood" : 0
     },
     "Arkansas" : {
         "Base" : 0.065,
-        "Groceries" : "",
-        "PrescriptionDrug" : 0,
+        "Groceries" : 0.015,
+        "PrescriptionDrug" : "",
         "PreparedFood" : 0
     },
     "California" : {
         "Base" : 0.075,
         "Groceries" : "",
-        "PrescriptionDrug" : 0,
+        "PrescriptionDrug" : "",
         "PreparedFood" : 0
     },
     "Colorado" : {
         "Base" : 0.0029,
         "Groceries" : "",
-        "PrescriptionDrug" : 0,
+        "PrescriptionDrug" : "",
         "PreparedFood" : 0
     },
     "Connecticut" : {
         "Base" : 0.0635,
         "Groceries" : "",
-        "PrescriptionDrug" : 0,
+        "PrescriptionDrug" : "",
         "PreparedFood" : 0
     }
 };
 
     function calculatePriceFor(state, item){
-    var result = ((itemTypes[items[item].type][state] === "") ? 0 : states[state].Base + itemTypes[items[item].type][state]) * items[item].price + items[item].price;
+    var result = ((states[state][items[item].type] === "") ? 0 : states[state].Base + itemTypes[items[item].type][state]) * items[item].price + items[item].price;
     return result;
 };
 
