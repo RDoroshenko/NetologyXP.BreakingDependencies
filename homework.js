@@ -126,8 +126,20 @@ var tests = [
     () => assertEquals(6.7 * (1 + 0.0), calculatePriceFor("California", "amoxicillin")),
     () => assertEquals(2 * (1 + 0.0635), calculatePriceFor("Connecticut", "hamburger")),
 ];
+
+function calculatePriceFor(state, item){
+    var result = null;
+    if (items[item].type === "PreparedFood") {
+        result = ( 1 + base(state) ) * items[item].price;
+    }
+    else {
+        result = calc(state, items[item].type) * items[item].price + items[item].price;
+    }
+    return result;
+};
+
 //Раскомментируйте следующую строчку для запуска тестов:
-//runTests (tests);
+runTests (tests);
 
 //############################
 //Код ниже этой строчки не надо менять для выполнения домашней работы
