@@ -123,12 +123,8 @@ var states = {
     }
 };
 
-    function base(state) {
-        return states[state].Base;
-}
-
-function calculatePriceFor(state, item){
-    var result = ((itemTypes[items[item].type][state] === "") ? 0 : base(state) + itemTypes[items[item].type][state]) * items[item].price + items[item].price;
+    function calculatePriceFor(state, item){
+    var result = ((itemTypes[items[item].type][state] === "") ? 0 : states[state].Base + itemTypes[items[item].type][state]) * items[item].price + items[item].price;
     return result;
 };
 
