@@ -84,13 +84,11 @@ function base(state) {
 
 function calc(state, itemType) {
 
-    var itemTypeTaxModifier = itemTypes[itemType];
-    if (itemTypeTaxModifier[state] === "") {
+    if (itemTypes[itemType][state] === "") {
         return 0;
     }
-    return base(state) + itemTypeTaxModifier[state];
+    return base(state) + itemTypes[itemType][state];
 }
-
 
 function calculatePriceFor(state, item){
     var result = null;
