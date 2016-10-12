@@ -47,37 +47,6 @@ var items = {
     "ceasar salad": {price: 4.2, type: "PreparedFood"},
 };
 
-var itemTypes =
-    {
-        "Groceries": {
-            "Alabama" : 0,
-            "Alaska" : 0,
-            "Arizona" : "",
-            "Arkansas" : 0.015,
-            "California" : "",
-            "Colorado" : "",
-            "Connecticut" : ""
-        },
-        "PrescriptionDrug": {
-            "Alabama" : "",
-            "Alaska" : 0,
-            "Arizona" : "",
-            "Arkansas" : "",
-            "California" : "",
-            "Colorado" : "",
-            "Connecticut" : ""
-        },
-        "PreparedFood": {
-            "Alabama": 0,
-            "Alaska": 0,
-            "Arizona": 0,
-            "Arkansas": 0,
-            "California": 0,
-            "Colorado": 0,
-            "Connecticut": 0
-        }
-    };
-
 var states = {
     "Alabama" : {
         "Base" : 0.04,
