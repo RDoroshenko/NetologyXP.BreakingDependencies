@@ -75,20 +75,56 @@ var itemTypes =
             "California": 0,
             "Colorado": 0,
             "Connecticut": 0
-        },
+        }
     };
 
-function base(state) {
-    var taxes = {
-        "Alabama" : 0.04,
-        "Alaska" : 0,
-        "Arizona" : 0.056,
-        "Arkansas" : 0.065,
-        "California" : 0.075,
-        "Colorado" : 0.029,
-        "Connecticut" : 0.0635
-    };
-    return taxes[state];
+var states = {
+    "Alabama" : {
+        "Base" : 0.04,
+        "Groceries" : "",
+        "PrescriptionDrug" : 0,
+        "PreparedFood" : 0
+    },
+    "Alaska" : {
+        "Base" : 0,
+        "Groceries" : "",
+        "PrescriptionDrug" : 0,
+        "PreparedFood" : 0
+    },
+    "Arizona" : {
+        "Base" : 0.056,
+        "Groceries" : "",
+        "PrescriptionDrug" : 0,
+        "PreparedFood" : 0
+    },
+    "Arkansas" : {
+        "Base" : 0.065,
+        "Groceries" : "",
+        "PrescriptionDrug" : 0,
+        "PreparedFood" : 0
+    },
+    "California" : {
+        "Base" : 0.075,
+        "Groceries" : "",
+        "PrescriptionDrug" : 0,
+        "PreparedFood" : 0
+    },
+    "Colorado" : {
+        "Base" : 0.0029,
+        "Groceries" : "",
+        "PrescriptionDrug" : 0,
+        "PreparedFood" : 0
+    },
+    "Connecticut" : {
+        "Base" : 0.0635,
+        "Groceries" : "",
+        "PrescriptionDrug" : 0,
+        "PreparedFood" : 0
+    }
+};
+
+    function base(state) {
+        return states[state].Base;
 }
 
 function calculatePriceFor(state, item){
