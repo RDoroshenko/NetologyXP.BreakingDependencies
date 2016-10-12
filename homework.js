@@ -83,11 +83,7 @@ function base(state) {
 }
 
 function calc(state, itemType) {
-
-    if (itemTypes[itemType][state] === "") {
-        return 0;
-    }
-    return base(state) + itemTypes[itemType][state];
+    return (itemTypes[itemType][state] === "") ? 0 : base(state) + itemTypes[itemType][state];
 }
 
 function calculatePriceFor(state, item){
