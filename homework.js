@@ -105,7 +105,7 @@ var states = {
 };
 
     function calculatePriceFor(state, item){
-    var result = ((states[state][items[item].type] === "") ? 0 : states[state].Base + states[state][items[item].type]) * items[item].price + items[item].price;
+        var result = ((states[state][items[item].type] === "") ? 1 : 1 + states[state].Base + states[state][items[item].type]) * items[item].price;
     return result;
 };
 
@@ -141,7 +141,7 @@ var tests = [
 ];
 
 //Раскомментируйте следующую строчку для запуска тестов:
-//runTests (tests);
+//unTests (tests);
 
 //############################
 //Код ниже этой строчки не надо менять для выполнения домашней работы
